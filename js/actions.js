@@ -8,7 +8,7 @@ $(function(){
 	document.addEventListener("deviceready", function(){
 		//Acelerometro
 		var watchAC = null;
-		$('#acelerometro.individual li').tap(function(){
+		$('#acelerometro .individual li').tap(function(){
 			if($(this).index()==0){
 				if(watchAC == null){
 					watchAC = navigator.accelerometer.watchAcceleration(function(acc){
