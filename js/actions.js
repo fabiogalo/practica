@@ -35,7 +35,7 @@ $(function(){
 					$('#brujula .scroll h2').text(h.magneticHeading);
 				}, function(err){
 					alert(err.code);
-				},{frequency: 5000});
+				},{frequency: 500});
 			}else{
 				if(watchBrujula){
 					navigator.compass.clearWatch(watchBrujula);
