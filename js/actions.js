@@ -7,7 +7,7 @@ var jQT = new $.jQTouch({
 $(function(){
 	document.addEventListener("deviceready", function(){
 		//Acelerometro
-		/*var watchID = null;
+		var watchAC = null;
 		$('#acelerometro.individual li').tap(function(){
 			if($(this).index()==0){
 				if(watchAC == null){
@@ -27,7 +27,7 @@ $(function(){
 					$('#accelerometro h2').html('Detenido');
 				}
 			}
-		});*/
+		});
 		var watchBrujula = null;
 		$('#brujula ul.individual li'). tap(function(){
 			if($(this).index() == 0){
