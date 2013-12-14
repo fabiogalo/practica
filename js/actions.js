@@ -1,4 +1,5 @@
 //actions
+//Usmos las instancias de jQTjs para que funciones las transiciones y animaciones
 var jQT = new $.jQTouch({
 	themeSelectionSelector: '#jqt'
 });
@@ -6,7 +7,7 @@ var jQT = new $.jQTouch({
 $(function(){
 	document.addEventListener("deviceready", function(){
 		//Acelerometro
-		var watchID = null;
+		/*var watchID = null;
 		$('#acelerometro.individual li').tap(function(){
 			if($(this).index()==0){
 				if(watchAC == null){
@@ -25,6 +26,23 @@ $(function(){
 					watchAC = NULL;
 					$('#accelerometro h2').html('Detenido');
 				}
+			}
+		});*/
+		var watchBrujula = null;
+		$('#brujula ul.individual li'). tap(function(){
+			if($(this).index() == 0){
+				watchBrujula = navigator.compass.watchHeading(function(h){
+					$('#brujula .scroll h2').text(h.magneticHeading);
+				}, function(err){
+					alert(err.code);
+				},{frequency: 5000});
+			}else{
+				if(watchBrujula){
+					navigator.compass.clearWatch(watchBrujula);
+					watchBrujula = null;
+					$('#brujula .scroll h2').text('Detenido');
+				}
+			
 			}
 		});
 	},false);
